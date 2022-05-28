@@ -16,7 +16,7 @@ set(GLFW_LINK /usr/local/lib/libglfw.3.dylib)
 link_libraries(${GLFW_LINK})
 
 # 执行编译命令
-set(SOURCES include/glad.c Source/1_Base/1_1_HolleTriangle.cpp)
+set(SOURCES include/glad.c Source/1_Base/1_1_HolleWindows.cpp Source/1_Base/1_2_HolleTrianlge.cpp)
 add_executable(LearnOpenGL_Mac ${SOURCES})
 
 # 链接系统的 OpenGL 框架
