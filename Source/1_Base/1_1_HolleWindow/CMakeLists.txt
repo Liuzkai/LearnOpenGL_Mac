@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(LearnOpenGL_Mac)
+project(1_1_HolleWindow)
 
 # 使用 C++ 11 标准
 set(CMAKE_CXX_STANDARD 11)
@@ -10,21 +10,20 @@ set(GLFW_H /usr/local/Cellar/glfw/3.3.7/include/GLFW)
 set(GLAD_H /usr/local/Cellar/glad)
 set(KH_H /usr/local/Cellar/KHR)
 include_directories(${GLEW_H} ${GLFW_H} ${GLAD_H} ${KH_H})
+include_directories(.)
 
 # 添加目标链接
 set(GLFW_LINK /usr/local/lib/libglfw.3.dylib)
 link_libraries(${GLFW_LINK})
 
 # 执行编译命令
-set(SOURCES include/glad.c main.cpp)
-add_executable(LearnOpenGL_Mac ${SOURCES})
+set(SOURCES ../../../include/glad.c 1_1_HolleWindows.cpp)
+add_executable(1_1_HolleWindow ${SOURCES})
 
-ADD_SUBDIRECTORY(Source/1_Base/1_1_HolleWindow)
-ADD_SUBDIRECTORY(Source/1_Base/1_2_HolleTriangle)
 
 # 链接系统的 OpenGL 框架
 if (APPLE)
-    target_link_libraries(LearnOpenGL_Mac "-framework OpenGL")
+    target_link_libraries(1_1_HolleWindow "-framework OpenGL")
 endif()
 
 include(CTest)
@@ -33,3 +32,5 @@ enable_testing()
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
+
+
